@@ -6,12 +6,10 @@ import numpy as np
 import os
 import random
 from ast import literal_eval
-import torch
 from tensorflow.keras import layers
 from tensorflow import keras
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
 from sentence_transformers import SentenceTransformer
 from keras.callbacks import EarlyStopping
 from keras import optimizers
@@ -25,10 +23,7 @@ tf.random.set_seed(SEED)
 np.random.seed(SEED)
 random.seed(SEED)
 os.environ['PYTHONHASHSEED'] = str(SEED)
-torch.manual_seed(SEED)
-torch.cuda.manual_seed(SEED)
-torch.cuda.manual_seed_all(SEED)
-torch.backends.cudnn.deterministic = True
+
 
 # Make dataset function definition
 def make_dataset(dataframe, batch_size, lookup, is_train=True):
