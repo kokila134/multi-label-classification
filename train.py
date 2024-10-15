@@ -97,7 +97,7 @@ def make_infernce(df,batch_size,shallow_mlp_model,lookup,vocab):
 
 # Main block
 if __name__ == "__main__":
-    data=pd.read_excel("training_dataset_raw.xlsx")
+    data=pd.read_excel("your_training_dataset.xlsx")
     data_final=data.loc[data["Abstract"]!=0]
     data_final=data_final.reset_index(drop=True)
     data_filtered=data_final[["Abstract","Original_Label"]]
